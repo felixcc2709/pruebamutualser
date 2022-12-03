@@ -49,10 +49,10 @@ public class ManejadorGuardarMoneda {
 			
 	
 			 
-			return "La  moneda ha sido agregada"; 
+			return "La  moneda ha sido agregada"+" "+(HttpStatus.CREATED); 
 		} 
 		
-		 return "La moneda no es perminitada no se agrego";
+		 return "La moneda no es perminitada no se agrego"+" "+(HttpStatus.BAD_REQUEST);
 		
 	}
 	
