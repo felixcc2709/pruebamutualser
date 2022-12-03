@@ -1,0 +1,31 @@
+package com.prueba.alcancia.condicional;
+
+import com.prueba.alcancia.servicio.ServicioValidadorMoneda;
+
+public class ManejadorGuardarMoneda {
+
+ private ServicioValidadorMoneda servicioValidadorMoneda;	
+ 
+	
+ 
+ 
+ 
+	public ManejadorGuardarMoneda(ServicioValidadorMoneda servicioValidadorMoneda) {
+
+	this.servicioValidadorMoneda = servicioValidadorMoneda;
+}
+
+
+
+
+
+	public String ejecutar(Long valorMoneda) {
+		
+		
+		
+		return this.servicioValidadorMoneda.ejecutar(valorMoneda);
+		
+	}
+	
+	
+}

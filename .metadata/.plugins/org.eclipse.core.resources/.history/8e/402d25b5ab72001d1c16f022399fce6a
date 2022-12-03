@@ -1,0 +1,92 @@
+package com.prueba.alcancia.servicio;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.prueba.alcancia.modelo.Moneda;
+import com.prueba.alcancia.repositorio.MonedaRepositorio;
+
+@Service
+public class MonedaServicio {
+	
+	@Autowired
+	private MonedaRepositorio monedaRepositorio;
+	
+	
+	//guardar laas monedas 
+	public void guardarMoneda(Moneda moneda) {
+		
+		monedaRepositorio.save(moneda);
+	
+		
+		
+	}	
+
+	
+		
+	public Long TotalCantidadMonedas(){
+		//SELECT COUNT(*) FROM monedas
+		
+		
+		return monedaRepositorio.count();
+		
+	
+	
+		
+	//return monedaRepositorio.findAll();
+	}
+	
+	
+	public Integer sumaCantidadDineroTotal() {
+		
+		return monedaRepositorio.sumaCantidadDineroTotal();
+	}
+	
+	
+public Integer cantidadMonedasPorDenominacion(int valorMoneda) {
+		
+		return monedaRepositorio.cantidadMonedasPorDenominacion(valorMoneda);
+	}
+	
+	
+	
+
+
+
+
+
+
+	public Integer CuandoLaMonadaEsCincuenta(Integer valorMoneda){
+		
+		monedaRepositorio.cuandoEsCincuenta(valorMoneda);
+		
+		
+		
+		return 1;
+	}
+	
+	public String CuandoLaMonadaEs100(Integer valorMoneda){
+		
+		return "dsd";
+	}
+
+	public String CuandoLaMonadaEs200(Integer valorMoneda){
+	
+	return "dsd";
+	}
+
+	public String CuandoLaMonadaEs500(Integer valorMoneda){
+	
+	return "dsd";
+}
+	
+	public String CuandoLaMonadaEs1000(Long valorMoneda){
+	
+	return "dsd";
+}
+	
+			
+
+}

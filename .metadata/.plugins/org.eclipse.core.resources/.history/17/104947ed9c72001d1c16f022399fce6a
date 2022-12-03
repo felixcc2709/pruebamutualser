@@ -1,0 +1,25 @@
+package com.prueba.alcancia.repositorio;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.prueba.alcancia.modelo.Moneda;
+
+public interface MonedaRepositorio extends JpaRepository<Moneda, Integer> {
+	
+ 
+	 @Query(value = "SELECT sum(valor) FROM Moneda")
+	    public Long sumaCantidadDineroTotal();
+	 
+	 
+	 
+	 @Query(value = "SELECT count(*) FROM Moneda where valor =?1")
+	    public Long cantidadMonedasPorDenominacion(int valorMoneda);
+	
+	 
+	 @Query(value = "INSERT INTO Moneda valor VALUES 50")
+	 public String cuandoEsCincuenta(Long valorMoneda);
+	 
+
+}

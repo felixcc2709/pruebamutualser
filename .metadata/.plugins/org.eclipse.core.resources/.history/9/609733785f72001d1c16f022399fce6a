@@ -1,0 +1,5 @@
+package com.prueba.alcancia.modelo;
+
+public class Moneda {
+
+}

@@ -1,0 +1,47 @@
+package com.prueba.alcancia.condicional;
+
+import java.beans.JavaBean;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.prueba.alcancia.servicio.ServicioValidadorMoneda;
+
+@Component
+public class ManejadorGuardarMoneda {
+	
+@Autowired 
+
+ private ServicioValidadorMoneda servicioValidadorMoneda;	
+ 
+	
+ 
+ 
+ 
+	//public ManejadorGuardarMoneda(ServicioValidadorMoneda servicioValidadorMoneda) {
+
+		//	this.servicioValidadorMoneda = servicioValidadorMoneda;
+//}
+
+
+
+
+
+	public ManejadorGuardarMoneda() {
+	// TODO Auto-generated constructor stub
+}
+
+
+
+
+
+	public Integer ejecutar(Integer valorMoneda) {	
+		
+		
+				
+		//return this.servicioValidadorMoneda.ejecutar(valorMoneda);
+		
+	}
+	
+	
+}

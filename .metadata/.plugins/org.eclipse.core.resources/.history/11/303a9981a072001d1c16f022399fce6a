@@ -1,0 +1,62 @@
+package com.prueba.alcancia.controlador;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.prueba.alcancia.condicional.ManejadorGuardarMoneda;
+import com.prueba.alcancia.modelo.Moneda;
+import com.prueba.alcancia.servicio.MonedaServicio;
+
+@RestController
+@RequestMapping(value="/moneda")
+public class MonedaControlador {
+	
+	 private ManejadorGuardarMoneda manejadorGuardarMoneda;
+	 
+	@Autowired
+	private MonedaServicio monedaServicio;
+	
+	
+	@PostMapping("/guardar")
+	public void  guardarMoneda(@RequestBody Moneda moneda) {
+		
+		manejadorGuardarMoneda.ejecutar(moneda.getValor());
+		
+		
+		
+		//if(moneda.getValor()==50 || (moneda.getValor()==100) || (moneda.getValor()==200) || (moneda.getValor()==500) || (moneda.getValor()==1000)     ) {
+				
+					
+			monedaServicio.guardarMoneda(moneda);
+			
+		//}
+		
+	}
+	
+	@GetMapping("/total")
+	public Long totalDinero()
+	{
+		
+		 return monedaServicio.sumaCantidadDineroTotal(); 
+	}
+	
+	
+	@GetMapping("/cantidad-moneda-denominacion/{valorMoneda}")
+	public Long cantidadMonedaPorDenominacion(@PathVariable ("valorMoneda") Integer valorMoneda)
+	{
+		
+		 return monedaServicio.cantidadMonedasPorDenominacion(valorMoneda); 
+	}
+	
+	
+	
+
+	
+
+}

@@ -1,0 +1,60 @@
+package com.prueba.alcancia.servicio;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.prueba.alcancia.modelo.Moneda;
+import com.prueba.alcancia.repositorio.MonedaRepositorio;
+
+@Service
+public class MonedaServicio {
+	
+	@Autowired
+	private MonedaRepositorio monedaRepositorio;
+	
+	
+	//guardar laas monedas 
+	public void guardarMoneda(Moneda moneda) {
+		
+		monedaRepositorio.save(moneda);
+	
+		
+		
+	}	
+
+	
+		
+	public Long TotalCantidadMonedas(){
+		//SELECT COUNT(*) FROM monedas
+		
+		
+		return monedaRepositorio.count();
+		
+	
+	
+		
+	//return monedaRepositorio.findAll();
+	}
+	
+	
+	public Long sumaCantidadDineroTotal() {
+		
+		return monedaRepositorio.sumaCantidadDineroTotal();
+	}
+	
+	
+public Long cantidadMonedasPorDenominacion() {
+		
+		return monedaRepositorio.cantidadMonedasPorDenominacion();
+	}
+	
+	
+	
+
+	
+	
+			
+
+}

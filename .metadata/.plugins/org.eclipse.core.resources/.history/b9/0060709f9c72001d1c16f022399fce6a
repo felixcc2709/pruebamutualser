@@ -1,0 +1,53 @@
+package com.prueba.alcancia.servicio;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class ServicioValidadorMoneda {
+	
+	
+	@Autowired
+	private MonedaServicio monedaServicio;
+	
+	
+	public String ejecutar(Long valorMoneda) {
+		
+		 
+		 if(valorMoneda==50) {
+			 
+			 monedaServicio.CuandoLaMonadaEsCincuenta(valorMoneda);
+			return "se agrego la moneda de 50";
+		 }
+		 
+		 /*
+		 if(valorMoneda==100) {
+			 
+			 
+		 }
+		 
+		 if(valorMoneda==200) {
+			 
+		 }
+		 
+		 if(valorMoneda==500) {
+			 
+		 }
+		 
+		 if(valorMoneda==1000) {
+			 
+			 
+		 }
+		 */
+		 
+		//if(moneda.getValor()==50 || (moneda.getValor()==100) || (moneda.getValor()==200) || (moneda.getValor()==500) || (moneda.getValor()==1000)   ) {
+			
+			
+			//  monedaServicio.guardarMoneda(moneda);
+		 return"dsd";	
+	}
+}
+
+		
+	
+	
+
+

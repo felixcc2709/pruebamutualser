@@ -1,0 +1,18 @@
+package com.prueba.alcancia.servicio;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class ServicioValidadorMoneda {
+	
+	
+	@Autowired
+	private MonedaServicio monedaServicio;
+	
+	
+	public String ejecutar(Long valorMoneda) {
+		 return"dsd";
+		
+	}
+	
+
+}
